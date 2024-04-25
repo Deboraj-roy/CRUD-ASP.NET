@@ -1,6 +1,18 @@
 ﻿@* @model IEnumerable<Employee> *@
-@* @model List<Employee>
-<h1>Employees List </h1>
+@model List<Employee>
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h1>Employees List </h1>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Employee" asp-action="Create" class="btn btn-primary"> 
+            <i class="bi bi-plus-circle"></i>  Create New Category
+            </a>
+        </div>
+    </div>
+</div>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -24,32 +36,4 @@
         }
     </tbody>
 
-</table> *@
-
-@model IEnumerable<Employee>
-
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Salary</th>
-      <th>Date of Birth</th>
-      <th>Department</th>
-      <th>Join Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach (var employee in Model)
-    {
-      <tr>
-        <td>@employee.Id</td>
-        <td>@employee.Name</td>
-        <td>@employee.Salary</td>
-        <td>@employee.DateOfBirth.ToString("MM/dd/yyyy")</td>
-        <td>@employee.Department</td>
-        <td>@employee.JoinDate.ToString("MM/dd/yyyy")</td>
-      </tr>
-    }
-  </tbody>
 </table>

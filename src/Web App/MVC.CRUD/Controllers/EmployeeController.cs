@@ -13,9 +13,9 @@ namespace MVC.CRUD.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Employee> objEmployeeList = _db.Employees;
+            //IEnumerable<Employee> objEmployeeList = _db.Employees;
             //List<Employee> objEmployeeList1 = _db.Employees.ToList();
-            //var objEmployeeList = _db.Employees.ToList();
+            var objEmployeeList = _db.Employees.ToList();
             return View(objEmployeeList);
         }
     }
