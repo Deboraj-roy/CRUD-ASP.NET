@@ -6,6 +6,8 @@ namespace MVC.CRUD.Models
     {
         [Key]
         public Guid Id { get; set; }
+        [Required]
+        [Display(Name = "Employee Name")]
         public string Name { get; set; }
         public Double Salary { get; set; }
         public DateTime DateOfBirth { get; set; }
