@@ -18,5 +18,9 @@ namespace MVC.CRUD.Controllers
             var objEmployeeList = _db.Employees.ToList();
             return View(objEmployeeList);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
