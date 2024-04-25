@@ -10,10 +10,12 @@
         <div class="mb-3 row p-1">
             <label class="p-0" asp-for="Name"></label>
             <input type="text" class="form-control" asp-for="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="mb-3 row p-1">
             <label class="p-0" asp-for="Salary"></label>
             <input type="text" class="form-control" asp-for="Salary" />
+            <span asp-validation-for="Salary" class="text-danger"></span>
         </div>
         <div class="mb-3 row p-1">
             <label class="p-0" asp-for="Department"></label>
@@ -22,14 +24,17 @@
         <div class="mb-3 row p-1">
             <label class="p-0" asp-for="DateOfBirth"></label>
             <input type="datetime-local" class="form-control" asp-for="DateOfBirth" />
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
         </div>
         <div class="mb-3 row p-1">
             <label class="p-0" asp-for="JoinDate"></label>
             <input type="datetime-local" class="form-control" asp-for="JoinDate" />
+            <span asp-validation-for="JoinDate" class="text-danger"></span>
         </div>
         <div class="mb-3 row p-1">
             <label class="p-0" asp-for="EntryDate"></label>
             <input type="datetime-local" class="form-control" asp-for="EntryDate" />
+            <span asp-validation-for="EntryDate" class="text-danger"></span>
         </div>
         <div class="row">
             <div class="col-6 col-md-3">

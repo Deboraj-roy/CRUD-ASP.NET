@@ -25,9 +25,19 @@ namespace MVC.CRUD.Controllers
         [HttpPost]
         public IActionResult Create(Employee obj)
         {
-            _db.Employees.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (obj.DateOfBirth == obj.JoinDate)
+            {
+                ModelState.AddModelError("JoinDate", "The Join Date cannot exactly match the DateOfBirth.");
+            }
+
+            if (ModelState.IsValid)
+            { 
+                _db.Employees.Add(obj);
+                _db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }
