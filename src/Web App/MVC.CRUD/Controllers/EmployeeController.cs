@@ -60,5 +60,28 @@ namespace MVC.CRUD.Controllers
             }
             return View();
         }
+
+        public IActionResult Delete(Guid? id)
+        {
+            if (id == null || id == Guid.Empty) { return NotFound(); }
+            //Employee employee = _db.Employees.Find(id);
+            Employee employee = _db.Employees.FirstOrDefault(x => x.Id == id);
+            if (employee == null) { return NotFound(); }
+            return View(employee);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePOST(Guid? id)
+        {
+            if (id == null || id == Guid.Empty) { return NotFound(); }
+            //Employee employee = _db.Employees.Find(id);
+            Employee employee = _db.Employees.FirstOrDefault(x => x.Id == id);
+            if (employee == null) { return NotFound(); }
+
+            _db.Employees.Remove(employee);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+
+        }
     }
 }
