@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MVC.CRUD.Models;
 
 namespace MVC.CRUD.Data
 {
@@ -9,5 +10,6 @@ namespace MVC.CRUD.Data
 
         }
 
+        public DbSet<Employee> Employees { get; set; }
     }
 }
