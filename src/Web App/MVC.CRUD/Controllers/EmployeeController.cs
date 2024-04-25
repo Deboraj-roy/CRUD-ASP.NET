@@ -25,10 +25,10 @@ namespace MVC.CRUD.Controllers
         [HttpPost]
         public IActionResult Create(Employee obj)
         {
-            if (obj.DateOfBirth == obj.JoinDate)
-            {
-                ModelState.AddModelError("JoinDate", "The Join Date cannot exactly match the DateOfBirth.");
-            }
+            //if (obj.DateOfBirth == obj.JoinDate)
+            //{
+            //    ModelState.AddModelError("JoinDate", "The Join Date cannot exactly match the DateOfBirth.");
+            //}
 
             if (ModelState.IsValid)
             { 
