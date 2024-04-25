@@ -1,1 +1,27 @@
-﻿<h1>Employees List here</h1>
+﻿@* @model IEnumerable<Employee> *@
+@model List<Employee>
+<h1>Employees List </h1>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Salary </th>
+            <th> Date of Birth </th>
+            <th> Department </th>
+            <th> Join Date </th>
+        </tr> 
+    </thead>
+    <tbody>
+        @foreach (var emp in Model.OrderBy(x => x.Salary))
+        {
+            <tr>
+                <td> @emp.Name </td>
+                <td> @emp.Salary </td>
+                <td> @emp.DateOfBirth.ToString("mm/dd/yyyy") </td>
+                <td> @emp.Department </td>
+                <td> @emp.JoinDate.ToString("mm/dd/yyyy") </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
