@@ -31,8 +31,29 @@ namespace MVC.CRUD.Controllers
             //}
 
             if (ModelState.IsValid)
-            { 
+            {
                 _db.Employees.Add(obj);
+                _db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        
+        public IActionResult Edit(Guid? id)
+        {
+            if (id == null || id == Guid.Empty) { return NotFound(); }
+            //Employee employee = _db.Employees.Find(id);
+            Employee employee = _db.Employees.FirstOrDefault(x => x.Id == id);
+            if (employee == null) { return NotFound(); }
+            return View(employee);
+        }
+        [HttpPost]
+        public IActionResult Edit(Employee obj)
+        {  
+            if (ModelState.IsValid)
+            {
+                _db.Employees.Update(obj);
                 _db.SaveChanges();
 
                 return RedirectToAction("Index");

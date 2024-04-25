@@ -17,7 +17,7 @@ namespace MVC.CRUD.Models
         [Required]
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
-        [Range(typeof(DateTime), "1990-01-01", "9999-12-31", ErrorMessage = "Date of Birth must be after 1990")]
+        [Range(typeof(DateTime), "1990-01-01", "2100-12-31", ErrorMessage = "Date of Birth must be after 1990")]
         public DateTime DateOfBirth { get; set; }
         public string Department { get; set; }
         public DateTime JoinDate { get; set; }
