@@ -22,5 +22,12 @@ namespace MVC.CRUD.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Create(Employee obj)
+        {
+            _db.Employees.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
