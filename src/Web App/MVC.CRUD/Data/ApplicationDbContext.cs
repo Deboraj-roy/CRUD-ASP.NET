@@ -11,6 +11,7 @@ namespace MVC.CRUD.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Employee> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -67,5 +68,6 @@ namespace MVC.CRUD.Data
                 } 
             );          
         }
+        public DbSet<MVC.CRUD.Models.User> User_1 { get; set; } = default!;
     }
 }
