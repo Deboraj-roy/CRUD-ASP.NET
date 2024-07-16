@@ -31,9 +31,14 @@ namespace ADO_dot_Net.Controllers
         [HttpPost]
         public IActionResult AddPerson(Person person)
         {
+            if (person == null)
+            {
+                return BadRequest();
+            }
+            
             personRepository.CreatePerson(person);
             return Ok(person);
-            //return CreatedAtRoute("GetPersonById", new { id = person.Id }, person); ;
+            //return CreatedAtRoute("GetPersonById", new { id = person1.Id }, person1); ;
         }
         [HttpPut]
         public IActionResult UpdatePerson(int id, Person person)
@@ -46,7 +51,7 @@ namespace ADO_dot_Net.Controllers
             if (personw is not null)
             {
                 personRepository.UpdatePerson(person);
-                return Ok();
+                return Ok(person);
             }
             return NotFound();
         }
