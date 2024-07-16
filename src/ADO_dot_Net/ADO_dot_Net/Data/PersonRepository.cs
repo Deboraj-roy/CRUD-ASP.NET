@@ -4,11 +4,11 @@ namespace ADO_dot_Net.Data
 {
     public class PersonRepository
     {
-        private string ConnectionString { get; set; }
+        private string ConnectionString { get; set; } = string.Empty;
+
         private ADODbContext Context { get; set; }
-        public PersonRepository(string connectionString)
+        public PersonRepository()
         {
-            ConnectionString = connectionString;
             Context = new ADODbContext(ConnectionString);
         }
         public List<Person> GetPeople()
