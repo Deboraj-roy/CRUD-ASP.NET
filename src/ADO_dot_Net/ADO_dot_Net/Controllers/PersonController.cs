@@ -18,16 +18,16 @@ namespace ADO_dot_Net.Controllers
             var people = personRepository.GetPeople(); // <List<Person>>
             return Ok(people);
         }
-        //[HttpGet]
-        //public IActionResult GetPersonById(int id)
-        //{
-        //    Person person = personRepository.PersonById(id);
-        //    if (person == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(person);
-        //}
+        [HttpGet("{id}")]
+        public IActionResult GetPersonById(int id)
+        {
+            Person person = personRepository.PersonById(id);
+            if (person == null)
+            {
+                return NotFound();
+            }
+            return Ok(person);
+        }
         //[HttpPost]
         //public IActionResult AddPerson(Person person)
         //{
