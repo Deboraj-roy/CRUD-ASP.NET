@@ -4,14 +4,14 @@ namespace ADOTest.Data
 {
     public class PersonRepository
     {
-        public string connectionString = "Server=.\\SQLEXPRESS;Database=ADO_DOT_NET;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true";
+        //public string connectionString = "Server=.\\SQLEXPRESS;Database=ADO_DOT_NET;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true";
         public ADODbContext Context;
 
         public PersonRepository()
         {
             Context = new ADODbContext(connectionString);
         }
-        //public string connectionString = "Server=.\\SQLEXPRESS;Database=ADO_DOT_NET;User Id=aspnetb9;Password=123456;Trust Server Certificate=True;";
+        public string connectionString = "Server=.\\SQLEXPRESS;Database=ADO_DOT_NET;User Id=aspnetb9;Password=123456;Trust Server Certificate=True;";
 
         //ADODbContext Context = new ADODbContext(connectionString);
 
