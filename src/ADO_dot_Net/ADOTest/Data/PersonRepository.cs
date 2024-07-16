@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace ADO_dot_Net.Data
+namespace ADOTest.Data
 {
     public class PersonRepository
     {

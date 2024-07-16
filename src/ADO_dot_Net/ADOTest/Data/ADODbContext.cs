@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace ADO_dot_Net.Data
+namespace ADOTest.Data
 {
     public class ADODbContext
     { 
@@ -17,7 +17,7 @@ namespace ADO_dot_Net.Data
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM Person", connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM Persons", connection);
                 SqlDataReader reader = command.ExecuteReader();
                 dt.Load(reader);
             }
@@ -29,7 +29,7 @@ namespace ADO_dot_Net.Data
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand($"SELECT * FROM Person WHERE Id = @Id", connection);
+                SqlCommand command = new SqlCommand($"SELECT * FROM Persons WHERE Id = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 SqlDataReader reader = command.ExecuteReader();
                 dt.Load(reader);
@@ -41,7 +41,7 @@ namespace ADO_dot_Net.Data
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Person (Name, Address, Email, Phone, Salary) VALUES (@Name, @Address, @Email, @Phone, @Salary)", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO Persons (Name, Address, Email, Phone, Salary) VALUES (@Name, @Address, @Email, @Phone, @Salary)", connection);
                 command.Parameters.AddWithValue("@Name", person.Name);
                 command.Parameters.AddWithValue("@Address", person.Address);
                 command.Parameters.AddWithValue("@Email", person.Email);
@@ -56,7 +56,7 @@ namespace ADO_dot_Net.Data
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE Person SET Name = @Name, Address = @Address, Email = @Email, Phone = @Phone, Salary = @Salary WHERE Id = @Id", connection);
+                SqlCommand command = new SqlCommand("UPDATE Persons SET Name = @Name, Address = @Address, Email = @Email, Phone = @Phone, Salary = @Salary WHERE Id = @Id", connection);
                 command.Parameters.AddWithValue("@Name", person.Name);
                 command.Parameters.AddWithValue("@Address", person.Address);
                 command.Parameters.AddWithValue("@Email", person.Email);
@@ -72,7 +72,7 @@ namespace ADO_dot_Net.Data
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("DELETE FROM Person WHERE Id = @Id", connection);
+                SqlCommand command = new SqlCommand("DELETE FROM Persons WHERE Id = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 command.ExecuteNonQuery();
             }
