@@ -1,8 +1,13 @@
 ﻿using ADO_dot_Net.Data;
 using Microsoft.AspNetCore.Mvc;
-
+using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 namespace ADO_dot_Net.Controllers
 {
+    [Route("api/Person")]
+    [ApiController] 
     public class PersonController : ControllerBase
     {
         private PersonRepository personRepository { get; set; }

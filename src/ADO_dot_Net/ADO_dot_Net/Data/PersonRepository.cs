@@ -4,7 +4,7 @@ namespace ADO_dot_Net.Data
 {
     public class PersonRepository
     {
-        private string ConnectionString { get; set; } = string.Empty;
+        private string ConnectionString { get; set; } = "Server=.\\SQLEXPRESS;Database=MVCCRUD;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true";
 
         private ADODbContext Context { get; set; }
         public PersonRepository()
