@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO_dot_Net", "ADO_dot_Net\ADO_dot_Net.csproj", "{F1C74728-F34C-4655-B7D4-EC822E6E5433}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO_dot_Net", "ADO_dot_Net\ADO_dot_Net.csproj", "{F1C74728-F34C-4655-B7D4-EC822E6E5433}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADOTest", "ADOTest\ADOTest.csproj", "{F5413F76-87F7-42BA-8F29-44DB7ADC6277}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADOTest", "ADOTest\ADOTest.csproj", "{F5413F76-87F7-42BA-8F29-44DB7ADC6277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rimon_NATH_conDemo", "Rimon_NATH_conDemo\Rimon_NATH_conDemo.csproj", "{707DC9BC-EB40-47B9-88AC-A8FF0F30DBD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F5413F76-87F7-42BA-8F29-44DB7ADC6277}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5413F76-87F7-42BA-8F29-44DB7ADC6277}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5413F76-87F7-42BA-8F29-44DB7ADC6277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707DC9BC-EB40-47B9-88AC-A8FF0F30DBD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707DC9BC-EB40-47B9-88AC-A8FF0F30DBD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707DC9BC-EB40-47B9-88AC-A8FF0F30DBD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707DC9BC-EB40-47B9-88AC-A8FF0F30DBD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
