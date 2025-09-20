@@ -11,10 +11,12 @@ namespace MVC.CRUD.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Employee> User { get; set; }
+        //public DbSet<Employee> User { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // --- Seed Employees ---
             modelBuilder.Entity<Employee>().HasData(
                 new Employee
                 {
@@ -66,8 +68,35 @@ namespace MVC.CRUD.Data
                     JoinDate = new DateTime(2017, 11, 14),
                     EntryDate = new DateTime(2017, 11, 8)
                 } 
-            );          
+            );
+
+            // --- Seed Users (20 records) ---
+            var users = new User[20];
+            for (int i = 1; i <= 20; i++)
+            {
+                users[i - 1] = new User
+                {
+                    Id = i, // auto int
+                    Username = $"user{i}",
+                    Password = $"P@ssword{i}", // ⚠️ For demo only, hash in real apps!
+                    Email = $"user{i}@example.com",
+                    FirstName = $"First{i}",
+                    LastName = $"Last{i}",
+                    DateOfBirth = new DateTime(1990, 1, 1).AddYears(-i),
+                    Gender = (i % 2 == 0) ? "Male" : "Female",
+                    Address = $"{i * 10} Main St",
+                    Salary = 30000 + (i * 1000),
+                    City = $"City{i}",
+                    State = $"State{i}",
+                    ZipCode = $"100{i:00}",
+                    PhoneNumber = $"555-000{i:00}",
+                    ProfilePicture = $"profile{i}.jpg",
+                    Role = (i % 3 == 0) ? "Admin" : "User"
+                };
+            }
+
+            modelBuilder.Entity<User>().HasData(users);
         }
-        public DbSet<MVC.CRUD.Models.User> User_1 { get; set; } = default!;
+        //public DbSet<MVC.CRUD.Models.User> User_1 { get; set; } = default!;
     }
 }

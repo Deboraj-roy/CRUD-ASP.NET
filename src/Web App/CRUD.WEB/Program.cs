@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CRUD.WEB.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using CRUD.WEB.Data;
+using System;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -27,4 +28,23 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+ApplyMigrations();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Employees}/{action=Index}/{id?}");
+
+
 app.Run();
+
+void ApplyMigrations()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var _db = scope.ServiceProvider.GetRequiredService<CRUDWEBContext>();
+        if (_db.Database.GetPendingMigrations().Count() > 0)
+        {
+            _db.Database.Migrate();
+        }
+    }
+}
